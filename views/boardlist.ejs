@@ -1,0 +1,31 @@
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>게시판</title>
+  </head>
+  <!-- http://bbs.ruliweb.com/news/board/1005 -->
+  <body>
+    <table style="border:solid 1px;">
+      <tr>
+        <th style="border:solid 1px;" >No.</th>
+        <th style="border:solid 1px;" >구분</th>
+        <th style="border:solid 1px;" >제목</th>
+        <th style="border:solid 1px;" >등록일시</th>
+      </tr>
+      <% for(var i=0;i<boardlist.length;i++) { %>
+      <tr>
+        <td style="border:solid 1px;" ><%= boardlist[i].BoardSeq %></td>
+        <td style="border:solid 1px;" ><%= boardlist[i].BoardKindName %></td>
+        <td style="border:solid 1px;" ><a href="/boardinfo/<%=boardlist[i].BoardSeq%>" ><%= boardlist[i].Title %></a></td>
+        <td style="border:solid 1px;" ><%= boardlist[i].RegDateTime %></td>
+      </tr>
+      <% } %>
+    </table>
+    <a href="/boardadd" >글쓰기</a>
+    <!--<%= boardlist %>-->
+  </body>
+
+
+</html>

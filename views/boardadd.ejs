@@ -1,0 +1,54 @@
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>게시물 추가</title>
+  </head>
+  <!-- http://bbs.ruliweb.com/news/board/1005 -->
+  <body>
+    <form method="post" action="/boardsave" >
+      <input type="hidden" name="boardseq" value="0" />
+
+    <table style="border:solid 1px;">
+      <tr>
+        <td style="border:solid 1px;" >구분</td>
+        <td style="border:solid 1px;" >
+          <select name="boardkind">
+            <option value="3001" >정치</option>
+            <option value="3002" >경제</option>
+            <option value="3003" >IT</option>
+          </select>
+
+        </td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >사원</td>
+        <td style="border:solid 1px;" >
+          <select name="regempseq">
+            <% for(var i=0;i<emplist.length;i++) { %>
+            <option value="<%= emplist[i].EmpSeq %>" ><%= emplist[i].EmpName %></option>
+            <% } %>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >제목</td>
+        <td style="border:solid 1px;" >
+          <input type="text" name="title" value="" />
+        </td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >내용</td>
+        <td style="border:solid 1px;" >
+          <textarea name="content" rows="10" cols="30"></textarea>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="저장" />
+    </form>
+    <a href="/boardlist" >목록</a>
+  </body>
+
+
+</html>

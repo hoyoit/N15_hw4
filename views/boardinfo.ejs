@@ -1,0 +1,35 @@
+
+<html>
+
+  <head>
+    <meta charset="utf-8" />
+    <title>게시물 상세내역</title>
+  </head>
+  <!-- http://bbs.ruliweb.com/news/board/1005 -->
+  <body>
+    <table style="border:solid 1px;">
+
+      <tr>
+        <td style="border:solid 1px;" >구분</td>
+        <td style="border:solid 1px;" ><%= boardinfo[0].BoardKindName %></td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >제목</td>
+        <td style="border:solid 1px;" ><%= boardinfo[0].Title %></td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >내용</td>
+        <td style="border:solid 1px;" ><pre><%= boardinfo[0].Content %></pre></td>
+      </tr>
+      <tr>
+        <td style="border:solid 1px;" >등록일시</td>
+        <td style="border:solid 1px;" ><%= boardinfo[0].RegDateTime %></td>
+      </tr>
+    </table>
+    <a href="/boardedit/<%=boardinfo[0].BoardSeq%>" >수정</a>
+    <a href="/boarddelete/<%=boardinfo[0].BoardSeq%>" >삭제</a>
+    <a href="/boardlist" >목록</a>
+  </body>
+
+
+</html>
